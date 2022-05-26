@@ -3,19 +3,11 @@ App\Entity\User:
     id:
       groups: [user_read]
     name:
-<<<<<<< HEAD
       groups: [user_read, user_register, user_update]
     email:
       groups: [user_read, user_register]
     password:
       groups: [user_register]
-=======
-      groups: [user_read, user_post]
-    email:
-      groups: [user_read, user_post]
-    password:
-      groups: [user_post]
->>>>>>> master
     avatar:
       groups: [user_read]
     active:
@@ -26,8 +18,7 @@ App\Entity\User:
       groups: [user_read]
     updatedAt:
       groups: [user_read]
-<<<<<<< HEAD
     groups:
       groups: [user_read]
-=======
->>>>>>> master
+    categories:
+      groups: [user_read]

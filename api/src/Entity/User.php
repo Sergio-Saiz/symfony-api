@@ -4,11 +4,8 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
-<<<<<<< HEAD
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-=======
->>>>>>> master
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Uid\Uuid;
 
@@ -24,10 +21,8 @@ class User implements UserInterface
     private bool $active;
     private \DateTime $createdAt;
     private \DateTime $updatedAt;
-<<<<<<< HEAD
     private Collection $groups;
-=======
->>>>>>> master
+    private Collection $categories;
 
     public function __construct(string $name, string $email)
     {
@@ -41,10 +36,8 @@ class User implements UserInterface
         $this->active = false;
         $this->createdAt = new \DateTime();
         $this->markAsUpdated();
-<<<<<<< HEAD
         $this->groups = new ArrayCollection();
-=======
->>>>>>> master
+        $this->categories = new ArrayCollection();
     }
 
     public function getId(): string
@@ -158,7 +151,6 @@ class User implements UserInterface
     public function eraseCredentials(): void
     {
     }
-<<<<<<< HEAD
 
     public function equals(User $user): bool
     {
@@ -193,6 +185,12 @@ class User implements UserInterface
     {
         return $this->groups->contains($group);
     }
-=======
->>>>>>> master
+
+    /**
+     * @return Collection|Category[]
+     */
+    public function getCategories(): Collection
+    {
+        return $this->categories;
+    }
 }

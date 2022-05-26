@@ -92,7 +92,6 @@ class TestBase extends WebTestCase
      *
      * @throws DBALException
      */
-<<<<<<< HEAD
     protected function getPeterGroupId()
     {
         return $this->initDbConnection()->query('SELECT id FROM user_group WHERE name = "Peter Group"')->fetchColumn(0);
@@ -103,13 +102,30 @@ class TestBase extends WebTestCase
      *
      * @throws DBALException
      */
-=======
->>>>>>> master
+    protected function getPeterExpenseCategoryId()
+    {
+        return $this->initDbConnection()->query('SELECT id FROM category WHERE name = "Peter Expense Category"')->fetchColumn(0);
+    }
+
+    /**
+     * @return false|mixed
+     *
+     * @throws DBALException
+     */
+    protected function getPeterGroupExpenseCategoryId()
+    {
+        return $this->initDbConnection()->query('SELECT id FROM category WHERE name = "Peter Group Expense Category"')->fetchColumn(0);
+    }
+
+    /**
+     * @return false|mixed
+     *
+     * @throws DBALException
+     */
     protected function getBrianId()
     {
         return $this->initDbConnection()->query('SELECT id FROM user WHERE email = "brian@api.com"')->fetchColumn(0);
     }
-<<<<<<< HEAD
 
     /**
      * @return false|mixed
@@ -120,6 +136,24 @@ class TestBase extends WebTestCase
     {
         return $this->initDbConnection()->query('SELECT id FROM user_group WHERE name = "Brian Group"')->fetchColumn(0);
     }
-=======
->>>>>>> master
+
+    /**
+     * @return false|mixed
+     *
+     * @throws DBALException
+     */
+    protected function getBrianExpenseCategoryId()
+    {
+        return $this->initDbConnection()->query('SELECT id FROM category WHERE name = "Brian Expense Category"')->fetchColumn(0);
+    }
+
+    /**
+     * @return false|mixed
+     *
+     * @throws DBALException
+     */
+    protected function getBrianGroupExpenseCategoryId()
+    {
+        return $this->initDbConnection()->query('SELECT id FROM category WHERE name = "Brian Group Expense Category"')->fetchColumn(0);
+    }
 }
