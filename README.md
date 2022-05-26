@@ -1,8 +1,5 @@
 # symfony-api
 
-github token: 
-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
-
 Swwagger (api_plattform): 
 http://localhost:250/api/v1/docs
 
