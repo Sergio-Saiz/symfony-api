@@ -8,7 +8,11 @@ App\Entity\User:
       path: /users/register
       controller: App\Api\Action\User\Register
       denormalization_context:
+<<<<<<< HEAD
+        groups: [user_register]
+=======
         groups: [user_post]
+>>>>>>> master
       openapi_context:
         summary: Register a new user
     resend_activation_email:
@@ -88,9 +92,66 @@ App\Entity\User:
                   properties:
                     message:
                       type: string
+<<<<<<< HEAD
+    upload_avatar:
+      method: POST
+      path: /users/{id}/avatar
+      controller: App\Api\Action\User\UploadAvatar
+      deserialize: false
+      openapi_context:
+        summary: Updates the user avatar
+        requestBody:
+          content:
+            multipart/form-data:
+              schema:
+                type: object
+                properties:
+                  avatar:
+                    type: string
+                    format: binary
+    facebook_auth:
+      method: POST
+      path: /users/facebook/auth
+      controller: App\Api\Action\Facebook\Authorization
+      deserialize: false
+      openapi_context:
+        summary: OAuth with Facebook
+        requestBody:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accessToken:
+                    type: string
+                    required: true
+        responses:
+          200:
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    token:
+                      type: string
   itemOperations:
     get:
       method: GET
+      security: is_granted("USER_READ", object)
+    put:
+      method: PUT
+      security: is_granted("USER_UPDATE", object)
+      denormalization_context:
+        groups: [user_update]
+    delete:
+      method: DELETE
+      security: is_granted("USER_DELETE", object)
+=======
+  itemOperations:
+    get:
+      method: GET
+>>>>>>> master
     activate:
       method: PUT
       path: /users/{id}/activate
@@ -145,4 +206,13 @@ App\Entity\User:
                   newPassword:
                     type: string
                     required: true
+<<<<<<< HEAD
+  properties:
+    groups:
+      subresource:
+        resourceClass: App\Entity\Group
+        collection: true
+        maxDepth: 1
+=======
 
+>>>>>>> master

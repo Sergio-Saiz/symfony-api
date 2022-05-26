@@ -19,15 +19,30 @@ security:
         docs:
             pattern: ^/api/v1/docs
             methods: [GET]
+<<<<<<< HEAD
             security: false
         request_reset_password:
             pattern: ^/api/v1/users/request_reset_password
             methods: [POST]
             security: false
+=======
+            security: false
+        request_reset_password:
+            pattern: ^/api/v1/users/request_reset_password
+            methods: [POST]
+            security: false
+>>>>>>> master
         reset_password:
             pattern: ^/api/v1/users/reset_password
             methods: [POST]
             security: false
+<<<<<<< HEAD
+        accept_request:
+            pattern: ^/api/v1/groups/.*/accept_request
+            methods: [PUT]
+            security: false
+=======
+>>>>>>> master
         login:
             pattern: /api/v1/users/login
             stateless: true
@@ -38,6 +53,13 @@ security:
                 success_handler: lexik_jwt_authentication.handler.authentication_success
                 failure_handler: lexik_jwt_authentication.handler.authentication_failure
                 require_previous_session: false
+<<<<<<< HEAD
+        facebook_auth:
+            pattern: ^/api/v1/users/facebook/auth
+            methods: [POST]
+            security: false
+=======
+>>>>>>> master
         api:
             pattern: ^/api/v1
             stateless: true
