@@ -13,7 +13,12 @@
         <field name="createdAt" type="datetime"/>
         <field name="updatedAt" type="datetime"/>
 
-<<<<<<< HEAD
+        <one-to-many field="categories" target-entity="App\Entity\Category" mapped-by="owner">
+            <cascade>
+                <cascade-remove/>
+            </cascade>
+        </one-to-many>
+
         <many-to-many field="groups" target-entity="App\Entity\Group" inversed-by="users">
             <cascade>
                 <cascade-remove/>
@@ -28,8 +33,6 @@
             </join-table>
         </many-to-many>
 
-=======
->>>>>>> master
         <lifecycle-callbacks>
             <lifecycle-callback type="preUpdate" method="markAsUpdated"/>
         </lifecycle-callbacks>
