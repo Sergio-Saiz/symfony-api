@@ -17,6 +17,7 @@ framework:
                         user_queue:
                             binding_keys: [user_queue]
                     auto_setup: true
+<<<<<<< HEAD
             amqp_group:
                 dsn: '%env(string:MESSENGER_TRANSPORT_DSN)%'
                 options:
@@ -32,3 +33,8 @@ framework:
             'App\Messenger\Message\UserRegisteredMessage': amqp_user
             'App\Messenger\Message\RequestResetPasswordMessage': amqp_user
             'App\Messenger\Message\GroupRequestMessage': amqp_group
+=======
+        routing:
+            'App\Messenger\Message\UserRegisteredMessage': amqp_user
+            'App\Messenger\Message\RequestResetPasswordMessage': amqp_user
+>>>>>>> master

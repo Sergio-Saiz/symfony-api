@@ -27,7 +27,11 @@ class ChangePasswordServiceTest extends UserServiceTestBase
 
         $this->userRepository
             ->expects($this->exactly(1))
+<<<<<<< HEAD
             ->method('findOneByIdOrFail')
+=======
+            ->method('findOneById')
+>>>>>>> master
             ->with($this->isType('string'))
             ->willReturn($user);
 
@@ -50,7 +54,11 @@ class ChangePasswordServiceTest extends UserServiceTestBase
 
         $this->userRepository
             ->expects($this->exactly(1))
+<<<<<<< HEAD
             ->method('findOneByIdOrFail')
+=======
+            ->method('findOneById')
+>>>>>>> master
             ->with($this->isType('string'))
             ->willReturn($user);
 

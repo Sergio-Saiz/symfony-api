@@ -8,7 +8,11 @@ App\Entity\User:
       path: /users/register
       controller: App\Api\Action\User\Register
       denormalization_context:
+<<<<<<< HEAD
         groups: [user_register]
+=======
+        groups: [user_post]
+>>>>>>> master
       openapi_context:
         summary: Register a new user
     resend_activation_email:
@@ -88,6 +92,7 @@ App\Entity\User:
                   properties:
                     message:
                       type: string
+<<<<<<< HEAD
     upload_avatar:
       method: POST
       path: /users/{id}/avatar
@@ -142,6 +147,11 @@ App\Entity\User:
     delete:
       method: DELETE
       security: is_granted("USER_DELETE", object)
+=======
+  itemOperations:
+    get:
+      method: GET
+>>>>>>> master
     activate:
       method: PUT
       path: /users/{id}/activate
@@ -196,9 +206,13 @@ App\Entity\User:
                   newPassword:
                     type: string
                     required: true
+<<<<<<< HEAD
   properties:
     groups:
       subresource:
         resourceClass: App\Entity\Group
         collection: true
         maxDepth: 1
+=======
+
+>>>>>>> master

@@ -4,11 +4,14 @@ services:
     _defaults:
         autowire: true
         autoconfigure: true
+<<<<<<< HEAD
         bind:
             $mediaPath:            '%env(resolve:SUBDOMAIN)%'
             $facebookClientId:     '%env(resolve:FACEBOOK_CLIENT)%'
             $facebookSecret:       '%env(resolve:FACEBOOK_SECRET)%'
             $facebookGraphVersion: '%env(resolve:FACEBOOK_GRAPH_VERSION)%'
+=======
+>>>>>>> master
 
     App\:
         resource: '../src/*'
@@ -25,6 +28,7 @@ services:
     App\Api\Listener\JWTCreatedListener:
         tags:
             - { name: kernel.event_listener, event: lexik_jwt_authentication.on_jwt_created, method: onJWTCreated }
+<<<<<<< HEAD
 
     app.images.s3:
         class: Aws\S3\S3Client
@@ -40,3 +44,5 @@ services:
         App\Api\Listener\PreWrite\PreWriteListener:
             tags:
                 - { name: kernel.event_listener, event: kernel.view, method: onKernelView, priority: 33 }
+=======
+>>>>>>> master
