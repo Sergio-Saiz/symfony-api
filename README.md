@@ -1,4 +1,4 @@
-# symfony-api
+# symfony-api con Api Platform, Rabbit MQ y Docker
 
 Swwagger (api_plattform): 
 http://localhost:250/api/v1/docs
